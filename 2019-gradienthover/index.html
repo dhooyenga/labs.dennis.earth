@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style='height:100%'>
+<head>
+  <title></title>
+</head>
+<body style='height:100%;margin:0;display:flex;align-items:center;justify-content:center'>
+  <h1 style='display: table-cell;cursor:default;color:transparent;-webkit-text-fill:transparent;-webkit-background-clip:text;font-size:12vw' class='gradient-test'>Hover me plz</h1>
+</body>
+<script>
+  var gradientTest = document.getElementsByClassName('gradient-test')
+  function doGradient(element, percentage1, percentage2) {
+    for (var i=0; i<element.length; i++) {
+      // element[i].style.backgroundImage = `linear-gradient(to right, darkred, orange ${percentage}%, darkred)`
+      element[i].style.backgroundImage = `radial-gradient(circle at ${percentage1}% ${percentage2}%, yellow, orange 10%, darkred 30%)`
+    }
+  }
+  for (var i=0; i<gradientTest.length; i++) {
+    gradientTest[i].onmousemove = function(e) {
+      var xPosition = e.pageX - this.offsetLeft
+      var yPosition = e.pageY - this.offsetTop
+      var width = e.target.clientWidth
+      var height = e.target.clientHeight
+      doGradient(
+        gradientTest,
+        Math.floor(xPosition / width * 100),
+        Math.floor(yPosition / height * 100)
+      )
+    }
+    gradientTest[i].onmouseout = function() {
+      doGradient(gradientTest, 50, 50)
+    }
+  }
+  
+    window.onload = function() {
+      doGradient(gradientTest, 50)
+    }
+</script>
+</html>
