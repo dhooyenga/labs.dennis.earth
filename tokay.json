@@ -1,0 +1,32 @@
+{
+  "restaurant": {
+    "name": "Tokay's Tacos",
+    "id": 312,
+    "logo": "https://.png",
+    "location": {
+      "address": "Straatnaam 3",
+      "city": "Groningen",
+      "zip": "1234AB",
+      "state": null,
+      "country": "Netherlands"
+    },
+    "links": {
+      "website": "https://tokaystacos.com",
+      "twitter": "tokaystacos"
+    }
+  },
+  "menus": [
+    {
+      "name": "Tacos",
+      "id": 1,
+      "icon": 13,
+      "items": [
+        {
+          "name": "El Pastor",
+          "price": 3.5,
+          "ingredients": ["Pork", "Pineapple", "Salsa Verde", "Corn Tortilla"]
+        }
+      ]
+    }
+  ]
+}
